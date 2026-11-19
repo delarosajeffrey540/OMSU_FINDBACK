@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 z" fill="#64748B"/>
+  </marker>
+  <style>text { font-family: Arial, Helvetica, sans-serif; }</style>
+</defs>
+<rect width="1600" height="1000" fill="#F8FAFC"/>
+<text x="800" y="52" text-anchor="middle" font-size="34" font-weight="800" fill="#0F172A">OMSU FindBack - Layered Architecture</text>
+<text x="800" y="82" text-anchor="middle" font-size="16" fill="#64748B">Five application layers plus shared cross-cutting infrastructure</text>
+
+<rect x="50" y="120" width="1500" height="145" rx="16" fill="#DBEAFE" stroke="#2563EB" stroke-width="3"/>
+<rect x="50" y="120" width="260" height="145" rx="16" fill="#2563EB" opacity="0.96"/>
+<text x="180" y="182.5" text-anchor="middle" font-size="22" font-weight="800" fill="#FFFFFF">PRESENTATION LAYER</text>
+<rect x="340" y="145" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#2563EB" stroke-width="1.5"/>
+<text x="352" y="172" font-size="16" font-weight="700" fill="#0F172A">Actors</text>
+<text x="352" y="198" font-size="13" fill="#334155">Student / Reporter</text>
+<text x="352" y="219" font-size="13" fill="#334155">Moderator</text>
+<text x="352" y="240" font-size="13" fill="#334155">Administrator</text>
+<rect x="635" y="145" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#2563EB" stroke-width="1.5"/>
+<text x="647" y="172" font-size="16" font-weight="700" fill="#0F172A">Web Interface</text>
+<text x="647" y="198" font-size="13" fill="#334155">Jinja2 HTML templates</text>
+<text x="647" y="219" font-size="13" fill="#334155">Responsive CSS</text>
+<text x="647" y="240" font-size="13" fill="#334155">JavaScript interactions</text>
+<rect x="930" y="145" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#2563EB" stroke-width="1.5"/>
+<text x="942" y="172" font-size="16" font-weight="700" fill="#0F172A">Real-Time UI</text>
+<text x="942" y="198" font-size="13" fill="#334155">Socket.IO client</text>
+<text x="942" y="219" font-size="13" fill="#334155">Inbox and message thread</text>
+<rect x="1225" y="145" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#2563EB" stroke-width="1.5"/>
+<text x="1237" y="172" font-size="16" font-weight="700" fill="#0F172A">Forms</text>
+<text x="1237" y="198" font-size="13" fill="#334155">Login / registration</text>
+<text x="1237" y="219" font-size="13" fill="#334155">Lost / found reports</text>
+<text x="1237" y="240" font-size="13" fill="#334155">Claims / admin controls</text>
+<rect x="50" y="285" width="1500" height="145" rx="16" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<rect x="50" y="285" width="260" height="145" rx="16" fill="#16A34A" opacity="0.96"/>
+<text x="180" y="347.5" text-anchor="middle" font-size="22" font-weight="800" fill="#FFFFFF">APPLICATION / ROUTE LAYER</text>
+<rect x="340" y="310" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#16A34A" stroke-width="1.5"/>
+<text x="352" y="337" font-size="16" font-weight="700" fill="#0F172A">Auth Blueprint</text>
+<text x="352" y="363" font-size="13" fill="#334155">Login and logout</text>
+<text x="352" y="384" font-size="13" fill="#334155">Registration</text>
+<text x="352" y="405" font-size="13" fill="#334155">Role redirection</text>
+<rect x="635" y="310" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#16A34A" stroke-width="1.5"/>
+<text x="647" y="337" font-size="16" font-weight="700" fill="#0F172A">Student Blueprint</text>
+<text x="647" y="363" font-size="13" fill="#334155">Dashboard and reports</text>
+<text x="647" y="384" font-size="13" fill="#334155">AI suggestions</text>
+<text x="647" y="405" font-size="13" fill="#334155">Matching and claims</text>
+<rect x="930" y="310" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#16A34A" stroke-width="1.5"/>
+<text x="942" y="337" font-size="16" font-weight="700" fill="#0F172A">Staff Blueprints</text>
+<text x="942" y="363" font-size="13" fill="#334155">Moderator queue/items</text>
+<text x="942" y="384" font-size="13" fill="#334155">Admin users/catalog/analytics</text>
+<rect x="1225" y="310" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#16A34A" stroke-width="1.5"/>
+<text x="1237" y="337" font-size="16" font-weight="700" fill="#0F172A">Messaging &amp; Notifications</text>
+<text x="1237" y="363" font-size="13" fill="#334155">Conversation access</text>
+<text x="1237" y="384" font-size="13" fill="#334155">Socket.IO events</text>
+<text x="1237" y="405" font-size="13" fill="#334155">In-app / SMTP alerts</text>
+<rect x="50" y="450" width="1500" height="145" rx="16" fill="#FEF3C7" stroke="#D97706" stroke-width="3"/>
+<rect x="50" y="450" width="260" height="145" rx="16" fill="#D97706" opacity="0.96"/>
+<text x="180" y="512.5" text-anchor="middle" font-size="22" font-weight="800" fill="#FFFFFF">BUSINESS / DOMAIN LAYER</text>
+<rect x="340" y="475" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#D97706" stroke-width="1.5"/>
+<text x="352" y="502" font-size="16" font-weight="700" fill="#0F172A">Report Workflow</text>
+<text x="352" y="528" font-size="13" fill="#334155">Submission and verification</text>
+<text x="352" y="549" font-size="13" fill="#334155">Status transitions</text>
+<rect x="635" y="475" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#D97706" stroke-width="1.5"/>
+<text x="647" y="502" font-size="16" font-weight="700" fill="#0F172A">Claim Workflow</text>
+<text x="647" y="528" font-size="13" fill="#334155">Proof submission</text>
+<text x="647" y="549" font-size="13" fill="#334155">SSG Office handover</text>
+<text x="647" y="570" font-size="13" fill="#334155">Transaction recording</text>
+<rect x="930" y="475" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#D97706" stroke-width="1.5"/>
+<text x="942" y="502" font-size="16" font-weight="700" fill="#0F172A">AI Services</text>
+<text x="942" y="528" font-size="13" fill="#334155">YOLOv8 object detection</text>
+<text x="942" y="549" font-size="13" fill="#334155">Category / color suggestions</text>
+<rect x="1225" y="475" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#D97706" stroke-width="1.5"/>
+<text x="1237" y="502" font-size="16" font-weight="700" fill="#0F172A">Matching Service</text>
+<text x="1237" y="528" font-size="13" fill="#334155">Attribute scoring</text>
+<text x="1237" y="549" font-size="13" fill="#334155">Cosine image similarity</text>
+<rect x="50" y="615" width="1500" height="145" rx="16" fill="#F3E8FF" stroke="#9333EA" stroke-width="3"/>
+<rect x="50" y="615" width="260" height="145" rx="16" fill="#9333EA" opacity="0.96"/>
+<text x="180" y="677.5" text-anchor="middle" font-size="22" font-weight="800" fill="#FFFFFF">DATA ACCESS / MODEL LAYER</text>
+<rect x="340" y="640" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#9333EA" stroke-width="1.5"/>
+<text x="352" y="667" font-size="16" font-weight="700" fill="#0F172A">ORM Models</text>
+<text x="352" y="693" font-size="13" fill="#334155">SQLAlchemy models</text>
+<text x="352" y="714" font-size="13" fill="#334155">Relationships and constraints</text>
+<rect x="635" y="640" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#9333EA" stroke-width="1.5"/>
+<text x="647" y="667" font-size="16" font-weight="700" fill="#0F172A">Repositories</text>
+<text x="647" y="693" font-size="13" fill="#334155">Flask-SQLAlchemy queries</text>
+<text x="647" y="714" font-size="13" fill="#334155">Session commits</text>
+<rect x="930" y="640" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#9333EA" stroke-width="1.5"/>
+<text x="942" y="667" font-size="16" font-weight="700" fill="#0F172A">Domain Records</text>
+<text x="942" y="693" font-size="13" fill="#334155">Users, reports, claims</text>
+<text x="942" y="714" font-size="13" fill="#334155">Transactions, conversations</text>
+<rect x="1225" y="640" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#9333EA" stroke-width="1.5"/>
+<text x="1237" y="667" font-size="16" font-weight="700" fill="#0F172A">Audit &amp; Events</text>
+<text x="1237" y="693" font-size="13" fill="#334155">AuditLog</text>
+<text x="1237" y="714" font-size="13" fill="#334155">AIRecognitionEvent</text>
+<text x="1237" y="735" font-size="13" fill="#334155">Notifications</text>
+<rect x="50" y="780" width="1500" height="145" rx="16" fill="#E0F2FE" stroke="#0284C7" stroke-width="3"/>
+<rect x="50" y="780" width="260" height="145" rx="16" fill="#0284C7" opacity="0.96"/>
+<text x="180" y="842.5" text-anchor="middle" font-size="22" font-weight="800" fill="#FFFFFF">INFRASTRUCTURE LAYER</text>
+<rect x="340" y="805" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#0284C7" stroke-width="1.5"/>
+<text x="352" y="832" font-size="16" font-weight="700" fill="#0F172A">MySQL</text>
+<text x="352" y="858" font-size="13" fill="#334155">omsu_findback database</text>
+<text x="352" y="879" font-size="13" fill="#334155">PyMySQL connection</text>
+<rect x="635" y="805" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#0284C7" stroke-width="1.5"/>
+<text x="647" y="832" font-size="16" font-weight="700" fill="#0F172A">File Storage</text>
+<text x="647" y="858" font-size="13" fill="#334155">instance/uploads/</text>
+<text x="647" y="879" font-size="13" fill="#334155">JPG / PNG / WEBP</text>
+<rect x="930" y="805" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#0284C7" stroke-width="1.5"/>
+<text x="942" y="832" font-size="16" font-weight="700" fill="#0F172A">External Services</text>
+<text x="942" y="858" font-size="13" fill="#334155">SMTP email</text>
+<text x="942" y="879" font-size="13" fill="#334155">YOLOv8n model</text>
+<rect x="1225" y="805" width="280" height="95" rx="12" fill="#FFFFFF" fill-opacity="0.94" stroke="#0284C7" stroke-width="1.5"/>
+<text x="1237" y="832" font-size="16" font-weight="700" fill="#0F172A">Runtime</text>
+<text x="1237" y="858" font-size="13" fill="#334155">Flask / Flask-SQLAlchemy</text>
+<text x="1237" y="879" font-size="13" fill="#334155">Socket.IO / Gunicorn-ready</text>
+<line x1="800" y1="265" x2="800" y2="285" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="800" y1="430" x2="800" y2="450" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="800" y1="595" x2="800" y2="615" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="800" y1="760" x2="800" y2="780" stroke="#64748B" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="50" y="945" width="1500" height="35" rx="10" fill="#1E293B"/>
+<text x="800" y="968" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">Cross-cutting: CSRF Protection • Flask-Login / Roles • Session Security • Rate Limiting • Upload Validation • Security Headers • Audit Logging</text>
+</svg>

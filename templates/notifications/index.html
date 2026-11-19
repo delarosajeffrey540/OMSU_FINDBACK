@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Notifications | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">UPDATES</span><h1>Notifications</h1><p>Updates about your reports, claims, and messages.</p></div></div>
+<div class="conversation-list">
+  {% for notification in notifications %}
+    <form class="notification-card {% if not notification.is_read %}unread{% endif %}" method="post" action="{{ url_for('notifications.open_notification', notification_id=notification.id) }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div><b>{{ notification.title }}</b><p>{{ notification.body }}</p><time>{{ notification.created_at.strftime('%d %b %Y, %I:%M %p') }}</time></div>
+      <button class="outline-btn">Open</button>
+    </form>
+  {% else %}
+    <div class="empty-state">You have no notifications.</div>
+  {% endfor %}
+</div>
+{% endblock %}

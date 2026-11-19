@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block title %}Sign in | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/auth/login.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/auth/password_toggle.css') }}">{% endblock %}
+{% block auth_content %}
+<div class="auth-layout"><section class="auth-story"><div class="auth-brand"><img src="{{ url_for('static', filename='images/branding/omsu-logo.png') }}" data-fallback="https://omsu.edu.ph/images/omsc.logo.png" alt="Occidental Mindoro State University logo"><span>OMSU <b>/ FINDBACK</b></span></div>
+<div class="story-copy"><span class="eyebrow">A CAMPUS THAT CARES.</span><h1>A way back to<br>what matters.</h1>
+<p>An AI-powered, cross-platform smart lost item detection and recovery platform for OMSU.</p>
+<div class="steps"><b>LOST TO FOUND, IN THREE SIMPLE STEPS</b><p>01 &nbsp; Report an item with a photo</p><p>02 &nbsp; Explore AI-suggested matches</p><p>03 &nbsp; Verify ownership and recover</p></div></div>
+<footer>Made for the OMSU community<br>One place to report. A safer way to reconnect.</footer></section>
+<section class="auth-panel"><div class="auth-card"><span class="eyebrow">OCCIDENTAL MINDORO STATE UNIVERSITY</span><h2>Welcome back, OMSUan.</h2><p>A few clicks closer to finding what you lost.</p>
+<form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label for="login-email">Email address</label><input id="login-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+<label for="login-password">Password</label><div class="password-field"><input id="login-password" type="password" name="password" autocomplete="current-password" placeholder="Your password" required><button class="password-toggle" type="button" data-password-toggle aria-label="Show password" aria-pressed="false">Show</button></div>
+<button class="primary-btn">Sign in</button></form><p class="auth-switch">New to FindBack? <a href="{{ url_for('auth.register') }}">Create an account</a></p>
+<div class="role-note"><b>Account access</b><p>Students can register here. Faculty and university personnel accounts are created by an administrator. Moderator and administrator access is also assigned by an administrator.</p></div>
+</div></section></div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/password_toggle.js') }}" defer></script><script src="{{ url_for('static', filename='js/login_assets.js') }}" defer></script>{% endblock %}

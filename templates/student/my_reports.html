@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}My reports | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/student/my_reports.css') }}">{% endblock %}
+{% block content %}<div class="page-heading"><div><span class="eyebrow">STUDENT WORKSPACE</span><h1>Your reports, all in one place.</h1><p>Keep track of submitted items and possible matches.</p></div></div>
+<div class="report-list">{% for r in reports %}<article class="report-row"><div><span class="muted">{{ r.report_type }} report · {{ r.report_code }}</span><h3>{{ r.item_name }}</h3><p>{{ r.status }} · {{ r.event_date.strftime('%d %B %Y') }} · {{ r.campus_location }}</p></div><span class="status-tag">{{ r.status }}</span></article>{% else %}<div class="empty-state">You have not submitted any reports yet.</div>{% endfor %}</div>
+<div class="button-row"><a class="primary-btn" href="{{ url_for('student.create_report', kind='lost') }}">＋ Report lost item</a><a class="outline-btn" href="{{ url_for('student.create_report', kind='found') }}">＋ Report found item</a></div>{% endblock %}

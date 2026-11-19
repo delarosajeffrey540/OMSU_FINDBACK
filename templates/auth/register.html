@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block title %}Create account | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/auth/register.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/auth/password_toggle.css') }}">{% endblock %}
+{% block auth_content %}<div class="register-wrap"><div class="register-aside"><a class="auth-brand" href="{{ url_for('auth.login') }}">OMSU / FINDBACK</a><h1>A way back to<br>what matters.</h1><p>One place to report. A safer way to reconnect.</p></div>
+<div class="register-panel"><form class="register-card" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><span class="eyebrow">OCCIDENTAL MINDORO STATE UNIVERSITY</span><h2>Join your campus community</h2><p>Create an account to report, match, and recover items.</p>
+<label>Full name</label><input name="full_name" required placeholder="Your full name">
+<label>Email address</label><input type="email" name="email" required placeholder="name@example.com">
+<p class="account-policy">Student accounts only. Faculty and university personnel accounts are managed by an administrator.</p>
+<label for="register-password">Password</label><div class="password-field"><input id="register-password" type="password" name="password" minlength="8" required autocomplete="new-password" placeholder="At least 8 characters"><button class="password-toggle" type="button" data-password-toggle aria-label="Show password" aria-pressed="false">Show</button></div>
+<button class="primary-btn">Create account</button><p class="auth-switch">Already registered? <a href="{{ url_for('auth.login') }}">Sign in</a></p></form></div></div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/password_toggle.js') }}" defer></script>{% endblock %}

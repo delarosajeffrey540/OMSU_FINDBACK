@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L9,3 z" fill="#64748B"/>
+  </marker>
+  <style>text { font-family: Arial, Helvetica, sans-serif; }</style>
+</defs>
+<rect width="1600" height="1000" fill="#F8FAFC"/>
+<text x="800" y="50" text-anchor="middle" font-size="34" font-weight="800" fill="#0F172A">OMSU FindBack - Level 1 Data Flow Diagram</text>
+<text x="800" y="80" text-anchor="middle" font-size="16" fill="#64748B">External entities, processes, and persistent data flows</text>
+
+<rect x="40" y="155" width="170" height="145" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="3"/>
+<text x="125.0" y="187" text-anchor="middle" font-size="17" font-weight="800" fill="#0F172A">STUDENT</text>
+<text x="52" y="213" font-size="13" fill="#334155">Credentials</text>
+<text x="52" y="233" font-size="13" fill="#334155">Report details</text>
+<text x="52" y="253" font-size="13" fill="#334155">Claim proof</text>
+<text x="52" y="273" font-size="13" fill="#334155">Messages</text>
+<rect x="40" y="430" width="170" height="145" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="3"/>
+<text x="125.0" y="462" text-anchor="middle" font-size="17" font-weight="800" fill="#0F172A">MODERATOR</text>
+<text x="52" y="488" font-size="13" fill="#334155">Review decisions</text>
+<text x="52" y="508" font-size="13" fill="#334155">Handover details</text>
+<text x="52" y="528" font-size="13" fill="#334155">Claim reversal</text>
+<rect x="40" y="705" width="170" height="145" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="3"/>
+<text x="125.0" y="737" text-anchor="middle" font-size="17" font-weight="800" fill="#0F172A">ADMINISTRATOR</text>
+<text x="52" y="763" font-size="13" fill="#334155">User management</text>
+<text x="52" y="783" font-size="13" fill="#334155">Catalog management</text>
+<text x="52" y="803" font-size="13" fill="#334155">Analytics</text>
+<rect x="1390" y="705" width="170" height="145" rx="10" fill="#E0F2FE" stroke="#0284C7" stroke-width="3"/>
+<text x="1475.0" y="737" text-anchor="middle" font-size="17" font-weight="800" fill="#0F172A">SMTP SERVER</text>
+<text x="1402" y="763" font-size="13" fill="#334155">Optional email</text>
+<text x="1402" y="783" font-size="13" fill="#334155">Report / claim alerts</text>
+<text x="1402" y="803" font-size="13" fill="#334155">Message alerts</text>
+<circle cx="395.0" cy="227.5" r="72.5" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<text x="395.0" y="185" text-anchor="middle" font-size="13" font-weight="800" fill="#16A34A">1.0</text>
+<text x="395.0" y="207" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Authenticate &amp; Authorize</text>
+<text x="395.0" y="229" text-anchor="middle" font-size="12" fill="#334155">Login / registration</text>
+<text x="395.0" y="245" text-anchor="middle" font-size="12" fill="#334155">Role-based routing</text>
+<circle cx="395.0" cy="477.5" r="72.5" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<text x="395.0" y="435" text-anchor="middle" font-size="13" font-weight="800" fill="#16A34A">2.0</text>
+<text x="395.0" y="457" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Manage Lost / Found Reports</text>
+<text x="395.0" y="479" text-anchor="middle" font-size="12" fill="#334155">Create / upload</text>
+<text x="395.0" y="495" text-anchor="middle" font-size="12" fill="#334155">Review status</text>
+<circle cx="695.0" cy="477.5" r="72.5" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<text x="695.0" y="435" text-anchor="middle" font-size="13" font-weight="800" fill="#16A34A">3.0</text>
+<text x="695.0" y="457" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Analyze &amp; Match Items</text>
+<text x="695.0" y="479" text-anchor="middle" font-size="12" fill="#334155">YOLO suggestions</text>
+<text x="695.0" y="495" text-anchor="middle" font-size="12" fill="#334155">Attribute + image match</text>
+<circle cx="695.0" cy="227.5" r="72.5" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<text x="695.0" y="185" text-anchor="middle" font-size="13" font-weight="800" fill="#16A34A">4.0</text>
+<text x="695.0" y="207" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Process Claims</text>
+<text x="695.0" y="229" text-anchor="middle" font-size="12" fill="#334155">Claim submission</text>
+<text x="695.0" y="245" text-anchor="middle" font-size="12" fill="#334155">Proof review</text>
+<circle cx="995.0" cy="477.5" r="72.5" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<text x="995.0" y="435" text-anchor="middle" font-size="13" font-weight="800" fill="#16A34A">5.0</text>
+<text x="995.0" y="457" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Verify Handover</text>
+<text x="995.0" y="479" text-anchor="middle" font-size="12" fill="#334155">Approve claim</text>
+<text x="995.0" y="495" text-anchor="middle" font-size="12" fill="#334155">Record transaction</text>
+<circle cx="995.0" cy="227.5" r="72.5" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<text x="995.0" y="185" text-anchor="middle" font-size="13" font-weight="800" fill="#16A34A">6.0</text>
+<text x="995.0" y="207" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Messaging</text>
+<text x="995.0" y="229" text-anchor="middle" font-size="12" fill="#334155">Private threads</text>
+<text x="995.0" y="245" text-anchor="middle" font-size="12" fill="#334155">Socket.IO delivery</text>
+<circle cx="1270.0" cy="477.5" r="72.5" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<text x="1270.0" y="435" text-anchor="middle" font-size="13" font-weight="800" fill="#16A34A">7.0</text>
+<text x="1270.0" y="457" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Notifications</text>
+<text x="1270.0" y="479" text-anchor="middle" font-size="12" fill="#334155">In-app records</text>
+<text x="1270.0" y="495" text-anchor="middle" font-size="12" fill="#334155">Optional SMTP</text>
+<circle cx="1270.0" cy="227.5" r="72.5" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<text x="1270.0" y="185" text-anchor="middle" font-size="13" font-weight="800" fill="#16A34A">8.0</text>
+<text x="1270.0" y="207" text-anchor="middle" font-size="15" font-weight="800" fill="#0F172A">Admin Control</text>
+<text x="1270.0" y="229" text-anchor="middle" font-size="12" fill="#334155">Users</text>
+<text x="1270.0" y="245" text-anchor="middle" font-size="12" fill="#334155">Catalogs</text>
+<text x="1270.0" y="261" text-anchor="middle" font-size="12" fill="#334155">Audit / analytics</text>
+<rect x="590" y="720" width="210" height="155" fill="#F3E8FF" stroke="#9333EA" stroke-width="3"/>
+<line x1="590" y1="758" x2="800" y2="758" stroke="#9333EA" stroke-width="2"/>
+<text x="602" y="745" font-size="15" font-weight="800" fill="#6B21A8">D1 - USERS</text>
+<text x="602" y="778" font-size="12" fill="#334155">Credentials</text>
+<text x="602" y="795" font-size="12" fill="#334155">Role</text>
+<text x="602" y="812" font-size="12" fill="#334155">Status</text>
+<text x="602" y="829" font-size="12" fill="#334155">Affiliation</text>
+<rect x="850" y="720" width="210" height="155" fill="#F3E8FF" stroke="#9333EA" stroke-width="3"/>
+<line x1="850" y1="758" x2="1060" y2="758" stroke="#9333EA" stroke-width="2"/>
+<text x="862" y="745" font-size="15" font-weight="800" fill="#6B21A8">D2 - REPORTS</text>
+<text x="862" y="778" font-size="12" fill="#334155">Report details</text>
+<text x="862" y="795" font-size="12" fill="#334155">Photo filename</text>
+<text x="862" y="812" font-size="12" fill="#334155">Status</text>
+<rect x="1110" y="720" width="210" height="155" fill="#F3E8FF" stroke="#9333EA" stroke-width="3"/>
+<line x1="1110" y1="758" x2="1320" y2="758" stroke="#9333EA" stroke-width="2"/>
+<text x="1122" y="745" font-size="15" font-weight="800" fill="#6B21A8">D3 - CLAIMS / TRANSACTIONS</text>
+<text x="1122" y="778" font-size="12" fill="#334155">Ownership proof</text>
+<text x="1122" y="795" font-size="12" fill="#334155">Handover</text>
+<text x="1122" y="812" font-size="12" fill="#334155">Reversals</text>
+<rect x="1370" y="720" width="190" height="155" fill="#F3E8FF" stroke="#9333EA" stroke-width="3"/>
+<line x1="1370" y1="758" x2="1560" y2="758" stroke="#9333EA" stroke-width="2"/>
+<text x="1382" y="745" font-size="15" font-weight="800" fill="#6B21A8">D4 - CHAT / NOTICES</text>
+<text x="1382" y="778" font-size="12" fill="#334155">Conversations</text>
+<text x="1382" y="795" font-size="12" fill="#334155">Messages</text>
+<text x="1382" y="812" font-size="12" fill="#334155">Notifications</text>
+<line x1="210" y1="225" x2="290" y2="225" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="180.0" y="211.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="250.0" y="226.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Credentials</text>
+<line x1="500" y1="225" x2="590" y2="225" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="475.0" y="211.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="545.0" y="226.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Authenticated user</text>
+<line x1="210" y1="500" x2="290" y2="500" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="180.0" y="486.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="250.0" y="501.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Report / review</text>
+<line x1="500" y1="478" x2="590" y2="478" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="475.0" y="464.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="545.0" y="479.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Report details</text>
+<line x1="210" y1="770" x2="1190" y2="228" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="630.0" y="485.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="700.0" y="500.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Account / catalog action</text>
+<line x1="210" y1="478" x2="590" y2="478" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="330.0" y="464.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="400.0" y="479.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Review request</text>
+<line x1="590" y1="225" x2="500" y2="225" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="475.0" y="211.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="545.0" y="226.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Authorization</text>
+<line x1="395" y1="300" x2="395" y2="405" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="325.0" y="338.5" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="395.0" y="353.5" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Authorized report</text>
+<line x1="695" y1="405" x2="695" y2="300" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="625.0" y="338.5" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="695.0" y="353.5" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Match suggestions</text>
+<line x1="800" y1="478" x2="890" y2="478" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="775.0" y="464.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="845.0" y="479.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Verified match</text>
+<line x1="695" y1="405" x2="695" y2="300" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="625.0" y="338.5" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="695.0" y="353.5" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Claim target</text>
+<line x1="800" y1="228" x2="890" y2="228" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="775.0" y="214.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="845.0" y="229.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Claim / proof</text>
+<line x1="800" y1="478" x2="890" y2="228" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="775.0" y="339.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="845.0" y="354.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Ownership evidence</text>
+<line x1="800" y1="228" x2="890" y2="478" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="775.0" y="339.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="845.0" y="354.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Claim status</text>
+<line x1="1100" y1="478" x2="1190" y2="478" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1075.0" y="464.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1145.0" y="479.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Status / alert</text>
+<line x1="1100" y1="228" x2="890" y2="228" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="925.0" y="214.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="995.0" y="229.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Message events</text>
+<line x1="890" y1="228" x2="1190" y2="478" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="970.0" y="339.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1040.0" y="354.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Message / claim alert</text>
+<line x1="1350" y1="478" x2="1390" y2="478" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1300.0" y="464.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1370.0" y="479.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Notification</text>
+<line x1="1270" y1="478" x2="1390" y2="705" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1260.0" y="577.5" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1330.0" y="592.5" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Email request</text>
+<line x1="1350" y1="228" x2="210" y2="770" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="710.0" y="485.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="780.0" y="500.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Admin result</text>
+<line x1="395" y1="550" x2="695" y2="720" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="475.0" y="621.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="545.0" y="636.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">User/report record</text>
+<line x1="695" y1="550" x2="695" y2="720" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="625.0" y="621.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="695.0" y="636.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Report query</text>
+<line x1="695" y1="720" x2="695" y2="550" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="625.0" y="621.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="695.0" y="636.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Report/photo data</text>
+<line x1="800" y1="228" x2="695" y2="720" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="677.5" y="460.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="747.5" y="475.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Claim query</text>
+<line x1="695" y1="720" x2="800" y2="228" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="677.5" y="460.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="747.5" y="475.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">User details</text>
+<line x1="955" y1="550" x2="955" y2="720" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="885.0" y="621.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="955.0" y="636.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Claim / transaction</text>
+<line x1="955" y1="720" x2="955" y2="550" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="885.0" y="621.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="955.0" y="636.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Claim status</text>
+<line x1="995" y1="228" x2="1370" y2="720" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1112.5" y="460.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1182.5" y="475.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Chat / notice write</text>
+<line x1="1370" y1="720" x2="995" y2="228" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="1112.5" y="460.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="1182.5" y="475.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Chat history</text>
+<line x1="1190" y1="228" x2="590" y2="720" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="820.0" y="460.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="890.0" y="475.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">Account data</text>
+<line x1="590" y1="720" x2="1190" y2="228" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="820.0" y="460.0" width="140" height="22" rx="7" fill="#FFFFFF" fill-opacity="0.95"/>
+<text x="890.0" y="475.0" text-anchor="middle" font-size="11" font-weight="700" fill="#475569">User records</text>
+<rect x="40" y="895" width="1520" height="70" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<text x="65" y="925" font-size="15" font-weight="700" fill="#0F172A">Important data boundaries</text>
+<text x="65" y="951" font-size="13" fill="#334155">AI matching uses private images stored in instance/uploads; matching scores are suggestions, not ownership proof.</text>
+<text x="800" y="951" font-size="13" fill="#334155">The moderator or administrator must verify handover before a claim transaction completes.</text>
+
+</svg>

@@ -1,0 +1,18 @@
+.manager-report-form{margin-bottom:28px}
+.manager-report-form h2{margin-top:0}
+.manager-report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.manager-report-grid label,.manager-report-form>label{display:grid;gap:7px}
+.manager-photo{align-content:start}
+.manager-report-form .privacy-hint{margin:18px 0}
+.manager-list-heading{margin-top:34px}
+.manager-list-heading h2{margin:0 0 6px}
+.manager-list-heading p{margin:0;color:var(--muted)}
+.table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:8px}
+.table-wrap table{width:100%;border-collapse:collapse;min-width:880px}
+.table-wrap th,.table-wrap td{text-align:left;vertical-align:top;padding:13px;border-bottom:1px solid var(--line);font-size:12px}
+.table-wrap th{background:#e8f1f8;color:#345b79}
+.table-wrap td small{display:block;margin-top:5px;color:var(--muted)}
+.table-wrap td form{display:grid;gap:8px;min-width:180px}
+.table-wrap td form label{display:grid;gap:5px}
+.table-wrap td input,.table-wrap td select{padding:8px}
+@media(max-width:650px){.manager-report-grid{grid-template-columns:1fr}}

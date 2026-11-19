@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% set is_edit = user is not none %}
+{% set full_name_value = request.form.get('full_name', user.full_name if user else '') %}
+{% set email_value = request.form.get('email', user.email if user else '') %}
+{% set affiliation_value = request.form.get('affiliation', user.affiliation if user else 'Student') %}
+{% set role_value = request.form.get('role', user.role if user else 'user') %}
+{% set status_value = request.form.get('status', user.status if user else 'Active') %}
+{% block title %}{{ 'Edit user' if is_edit else 'Add user' }} | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/users.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/auth/password_toggle.css') }}">{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><span class="eyebrow">ADMINISTRATION</span><h1>{{ 'Edit user account' if is_edit else 'Add user account' }}</h1><p>{{ 'Update account details, access, or password.' if is_edit else 'Create an account for a campus community member.' }}</p></div>
+  <a class="outline-btn" href="{{ url_for('admin.users') }}">Back to users</a>
+</div>
+<form class="form-card account-form" method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label for="full_name">Full name</label>
+  <input id="full_name" name="full_name" maxlength="120" required value="{{ full_name_value }}">
+
+  <label for="email">Email address</label>
+  <input id="email" type="email" name="email" maxlength="150" required value="{{ email_value }}">
+
+  <label for="affiliation">University affiliation</label>
+  <input id="affiliation" name="affiliation" maxlength="40" required value="{{ affiliation_value }}">
+
+  <label for="role">Role</label>
+  <select id="role" name="role" required>
+    <option value="user" {% if role_value == 'user' %}selected{% endif %}>Regular user</option>
+    <option value="moderator" {% if role_value == 'moderator' %}selected{% endif %}>Moderator</option>
+    <option value="admin" {% if role_value == 'admin' %}selected{% endif %}>Administrator</option>
+  </select>
+
+  <label for="status">Account status</label>
+  <select id="status" name="status" required>
+    <option value="Active" {% if status_value == 'Active' %}selected{% endif %}>Active</option>
+    <option value="Inactive" {% if status_value == 'Inactive' %}selected{% endif %}>Inactive</option>
+  </select>
+
+  <label for="password">{{ 'New password (optional)' if is_edit else 'Password' }}</label>
+  <div class="password-field"><input id="password" type="password" name="password" minlength="8" {% if not is_edit %}required{% endif %} autocomplete="new-password"><button class="password-toggle" type="button" data-password-toggle aria-label="Show password" aria-pressed="false">Show</button></div>
+  <small>{% if is_edit %}Leave blank to keep the current password.{% else %}Use at least 8 characters.{% endif %}</small>
+
+  <div class="button-row account-form-actions">
+    <button class="primary-btn">{{ 'Save changes' if is_edit else 'Create account' }}</button>
+    <a class="outline-btn" href="{{ url_for('admin.users') }}">Cancel</a>
+  </div>
+</form>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/password_toggle.js') }}" defer></script>{% endblock %}

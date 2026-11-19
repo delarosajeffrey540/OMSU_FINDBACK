@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Activity analytics | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/users.css') }}">{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">AGGREGATE ACTIVITY</span><h1>AI & activity analytics</h1><p>Review report trends for a semester or any selected period. No claimant evidence is shown here.</p></div></div>
+<form class="search-row analytics-range" method="get">
+  <label>From <input type="date" name="start" value="{{ start.isoformat() }}"></label>
+  <label>Through <input type="date" name="end" value="{{ end.isoformat() }}"></label>
+  <button class="primary-btn">Apply date range</button>
+</form>
+<div class="analytics-stats"><div><span>Reports in period</span><b>{{ total }}</b></div><div><span>Recovered</span><b>{{ recovered }}</b></div><div><span>Recovery rate</span><b>{{ ((recovered / total * 100)|round(1)) if total else 0 }}%</b></div><div><span>AI analyses</span><b>{{ ai_count }}</b></div><div><span>Average top-detection confidence</span><b>{{ average_confidence }}%</b></div></div>
+<div class="catalog-grid analytics-grid">
+  <section class="admin-panel"><h2>Reports by category</h2>{% for name, count in by_category %}<div class="analytics-row"><span>{{ name }}</span><b>{{ count }}</b></div>{% else %}<p>No reports in this period.</p>{% endfor %}</section>
+  <section class="admin-panel"><h2>Reports by campus location</h2>{% for name, count in by_location %}<div class="analytics-row"><span>{{ name }}</span><b>{{ count }}</b></div>{% else %}<p>No reports in this period.</p>{% endfor %}</section>
+  <section class="admin-panel"><h2>Monthly report activity</h2>{% for year, month, count in monthly_reports %}<div class="analytics-row"><span>{{ '%04d-%02d'|format(year|int, month|int) }}</span><b>{{ count }}</b></div>{% else %}<p>No monthly activity.</p>{% endfor %}</section>
+  <section class="admin-panel"><h2>Most detected object classes</h2>{% for label, count in ai_labels %}<div class="analytics-row"><span>{{ label }}</span><b>{{ count }}</b></div>{% else %}<p>No AI analyses in this period.</p>{% endfor %}</section>
+</div>
+<p class="privacy-hint">These are descriptive counts, not predictive analytics. Image recognition suggestions are not ownership verification or automatic claim approval.</p>
+{% endblock %}

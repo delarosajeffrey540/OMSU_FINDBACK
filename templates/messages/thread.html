@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Private conversation | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><span class="eyebrow">PRIVATE MESSAGES</span><h1>{{ report.item_name }}</h1><p>{{ report.report_code }} · Claim {{ conversation.claim.claim_code }}</p></div>
+  <a class="outline-btn" href="{{ url_for('messages.inbox') }}">Back to messages</a>
+</div>
+<section class="chat-panel" data-conversation-id="{{ conversation.id }}" data-current-user-id="{{ current_user.id }}">
+  <div class="chat-notice">Only the report owner and claimant can participate. Moderators and administrators can access conversations to help resolve safety issues. Do not share passwords or full ID numbers.</div>
+  <div class="chat-status" id="chat-status" role="status">Connecting to private chat…</div>
+  <div class="chat-messages" id="chat-messages" aria-live="polite">
+    {% for message in messages %}
+      <article class="chat-message {% if message.sender_id == current_user.id %}mine{% endif %}" data-message-id="{{ message.id }}">
+        <b>{{ message.sender.full_name }}</b>
+        <p>{{ message.body }}</p>
+        <time>{{ message.created_at.strftime('%d %b %Y, %I:%M %p') }}</time>
+      </article>
+    {% endfor %}
+  </div>
+  <form class="chat-form" id="chat-form">
+    <label class="sr-only" for="chat-body">Message</label>
+    <textarea id="chat-body" maxlength="2000" rows="2" required placeholder="Write a private message…"></textarea>
+    <button class="primary-btn">Send</button>
+  </form>
+</section>
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js" defer></script>
+<script src="{{ url_for('static', filename='js/messages.js') }}" defer></script>
+{% endblock %}

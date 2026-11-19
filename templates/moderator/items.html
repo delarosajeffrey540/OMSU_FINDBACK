@@ -1,0 +1,29 @@
+{% extends "base.html" %}{% block title %}Manage lost & found | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/moderator/items.css') }}">{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">AUTHORIZED PERSONNEL</span><h1>Manage lost & found</h1><p>Create a report on behalf of a student and manage its handover status.</p></div><a class="outline-btn" href="{{ url_for('moderator.queue') }}">Review queue</a></div>
+<form class="form-card manager-report-form" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <h2>Add a campus report</h2>
+  <div class="manager-report-grid">
+    <label>Report type<select name="report_type" required><option value="">Choose type</option><option>Lost</option><option>Found</option></select></label>
+    <label>Student owner<select name="owner_id" required><option value="">Choose student</option>{% for owner in owners %}<option value="{{ owner.id }}">{{ owner.full_name }} · {{ owner.email }}</option>{% endfor %}</select></label>
+    <label>Item name<input name="item_name" maxlength="120" required></label>
+    <label>Category<select name="category" required><option value="">Choose category</option>{% for category in categories %}<option>{{ category.name }}</option>{% endfor %}</select></label>
+    <label>Item type<input name="item_type" maxlength="100"></label>
+    <label>Color<input name="color" maxlength="60"></label>
+    <label>Date lost/found<input type="date" name="event_date" required></label>
+    <label>Campus location<select name="campus_location" required><option value="">Choose location</option>{% for location in locations %}<option>{{ location.name }}</option>{% endfor %}</select></label>
+    <label class="manager-photo">Item photo (optional)<input type="file" name="photo" accept=".jpg,.jpeg,.png,.webp"></label>
+  </div>
+  <label>Description<textarea name="description" rows="3" required></textarea></label>
+  <p class="privacy-hint">Reports added here are published as verified. Add them only after checking the student’s details.</p>
+  <button class="primary-btn">Add report</button>
+</form>
+<div class="page-heading manager-list-heading"><div><h2>All reports</h2><p>Recovered items remain in admin history but are not shown on the student campus board.</p></div></div>
+<div class="table-wrap"><table><thead><tr><th>Report</th><th>Item</th><th>Owner</th><th>Status</th><th>Claimant</th><th>Action</th></tr></thead><tbody>
+{% for report in reports %}<tr><td>{{ report.report_code }}<small>{{ report.report_type }} · {{ report.event_date }}</small></td><td><b>{{ report.item_name }}</b><small>{{ report.category }}{% if report.color %} · {{ report.color }}{% endif %}</small></td><td>{{ report.reporter.full_name }}<small>{{ report.reporter.email }}</small></td><td>{{ 'Already claimed' if report.status == 'Recovered' else report.status }}</td><td>{% for claim in report.claims %}<small>{{ claim.claimant.full_name }} · {{ claim.status }}</small>{% else %}<small>No claim</small>{% endfor %}</td><td>
+{% if report.status == 'Recovered' %}<form method="post" action="{{ url_for('moderator.undo_claim', report_id=report.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>Reason<input name="reason" maxlength="255" required placeholder="Why is this being reopened?"></label><button class="outline-btn">Undo claimed status</button></form>
+{% elif report.status == 'Verified report' %}<form method="post" action="{{ url_for('moderator.mark_claimed', report_id=report.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% set report_claims = claims_by_report.get(report.id, []) %}{% if report_claims %}<label>Submitted claim<select name="claim_id" required><option value="">Choose claim</option>{% for claim in report_claims %}<option value="{{ claim.id }}">{{ claim.claimant.full_name }} · {{ claim.claim_code }} · {{ claim.status }}</option>{% endfor %}</select></label><small>Original claimant evidence will be retained in the transaction history.</small>{% elif report.report_type == 'Lost' %}<input type="hidden" name="claimant_id" value="{{ report.user_id }}"><p>Claimant: original reporter</p><label>Ownership details<input name="identifying_details" required maxlength="1000" placeholder="Details verified in person"></label><label>Last used details<input name="last_used_details" required maxlength="1000"></label>{% else %}<label>Claimant<select name="claimant_id" required><option value="">Select claimant</option>{% for person in owners if person.id != report.user_id %}<option value="{{ person.id }}">{{ person.full_name }} · {{ person.email }}</option>{% endfor %}</select></label><label>Ownership details<input name="identifying_details" required maxlength="1000" placeholder="Details verified in person"></label><label>Last used details<input name="last_used_details" required maxlength="1000"></label>{% endif %}<button class="primary-btn">Mark claimed</button></form>{% else %}<small>Approve this report before claiming it.</small>{% endif %}</td></tr>
+{% else %}<tr><td colspan="6">No reports found.</td></tr>{% endfor %}</tbody></table></div>
+{% endblock %}

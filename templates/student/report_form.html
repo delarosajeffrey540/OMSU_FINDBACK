@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block title %}Report {{ kind }} item | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/student/report_form.css') }}">{% endblock %}
+{% block content %}<div class="form-heading"><span class="eyebrow">CAMPUS REPORT</span><h1>Report a {{ kind|lower }} item</h1><p>{% if kind == 'Lost' %}Tell us what is missing. We will help you look for it.{% else %}A small act of kindness can make someone’s day.{% endif %}</p></div>
+<div class="step-line"><span>1 Add a photo</span><span>2 Check item details</span><span>3 Submit report</span></div>
+<form class="report-layout" id="report-form" data-ai-url="{{ url_for('student.suggest_photo_details') }}" method="post" enctype="multipart/form-data"><div class="form-card"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><h2>Item details</h2>
+<label>Item photo</label><input id="report-photo" type="file" name="photo" accept=".jpg,.jpeg,.png,.webp">
+<button class="outline-btn ai-analyze" id="analyze-photo" type="button">Suggest details from photo</button><p class="ai-result" id="ai-result" role="status">The local model recognizes common object classes, not every personal item. Low-confidence name, type, and category guesses are left blank; verify any color estimate.</p>
+<div class="two-col"><div><label>Item name *</label><input id="item-name" name="item_name" required placeholder="e.g. Blue insulated bottle"></div><div><label>Category *</label><select id="item-category" name="category" required><option value="">Choose category</option>{% for category in categories %}<option>{{ category.name }}</option>{% endfor %}</select></div>
+<div><label>Color</label><input name="color" placeholder="e.g. Navy blue"></div><div><label>Item type</label><input name="item_type" placeholder="e.g. Insulated bottle"></div>
+<div><label>{% if kind == 'Lost' %}Date last seen *{% else %}Date found *{% endif %}</label><input type="date" name="event_date" required></div><div><label>{% if kind == 'Lost' %}Last seen at *{% else %}Found at *{% endif %}</label><select name="campus_location" required><option value="">Choose campus location</option>{% for location in locations %}<option>{{ location.name }}</option>{% endfor %}</select></div></div>
+<label>Description *</label><textarea name="description" rows="5" required placeholder="Describe visible details. Keep unique identifying details private."></textarea>
+<p class="privacy-hint">Do not publish student IDs, names, serial numbers, or hidden identifying details.</p>
+<div class="button-row"><a class="outline-btn" href="{{ url_for('student.dashboard') }}">Cancel</a><button class="primary-btn">Submit {{ kind|lower }} report</button></div></div>
+<aside class="tips-card"><h3>What happens next?</h3><ol><li>A moderator reviews your report.</li><li>Explore possible matches after approval.</li><li>We help coordinate a safe, verified handover.</li></ol><p>The local pretrained model detects common objects. Wallets and other personal items may not have their own model label. It does not identify ownership or guarantee a match.</p></aside></form>
+<script src="{{ url_for('static', filename='js/report_form.js') }}" defer></script>
+{% endblock %}

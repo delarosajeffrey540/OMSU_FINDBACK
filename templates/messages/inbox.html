@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Messages | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">PRIVATE MESSAGES</span><h1>Your conversations</h1><p>Discuss a claimed item privately with its report owner.</p></div></div>
+<div class="conversation-list">
+  {% for conversation in conversations %}
+    {% set claim = conversation.claim %}
+    <a class="conversation-card" href="{{ url_for('messages.thread', conversation_id=conversation.id) }}">
+      <div><b>{{ claim.report.item_name }}</b><p>{{ claim.report.report_code }} · Claim {{ claim.claim_code }}</p></div>
+      <span>{{ claim.claimant.full_name if current_user.id == claim.report.user_id else claim.report.reporter.full_name }}</span>
+    </a>
+  {% else %}
+    <div class="empty-state">No conversations yet. Submit a claim on a found item to start messaging its owner.</div>
+  {% endfor %}
+</div>
+{% endblock %}

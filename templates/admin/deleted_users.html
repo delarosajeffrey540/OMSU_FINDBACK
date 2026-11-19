@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Deleted accounts | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/users.css') }}">{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">ADMINISTRATION</span><h1>Deleted accounts</h1><p>Restore an account to its status before deletion. Related reports and claims are preserved.</p></div><a class="outline-btn" href="{{ url_for('admin.users') }}">Back to user accounts</a></div>
+<div class="table-wrap"><table><thead><tr><th>Name & email</th><th>Affiliation</th><th>Role</th><th>Previous status</th><th>Action</th></tr></thead><tbody>{% for u in users %}<tr><td><b>{{ u.full_name }}</b><small>{{ u.email }}</small></td><td>{{ u.affiliation }}</td><td>{{ u.role }}</td><td>{{ 'Active' if u.status == 'Deleted-Active' else 'Inactive' }}</td><td><form method="post" action="{{ url_for('admin.restore_user', user_id=u.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="outline-btn">Restore account</button></form></td></tr>{% else %}<tr><td colspan="5">No deleted accounts.</td></tr>{% endfor %}</tbody></table></div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Campus categories & locations | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/users.css') }}">{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">CAMPUS SETTINGS</span><h1>Categories & locations</h1><p>Manage the choices shown when users submit a lost or found report.</p></div></div>
+<form class="form-card catalog-form" method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <h2>Add a list entry</h2>
+  <div class="catalog-add-row"><div><label for="kind">List</label><select id="kind" name="kind"><option value="category">Category</option><option value="location">Campus location</option></select></div><div><label for="name">Name</label><input id="name" name="name" maxlength="150" required></div><button class="primary-btn">Add</button></div>
+</form>
+<div class="catalog-grid">
+  {% for title, kind, entries in [('Categories', 'category', categories), ('Campus locations', 'location', locations)] %}
+  <section class="admin-panel"><h2>{{ title }}</h2><div class="catalog-list">
+    {% for entry in entries %}
+    <div class="catalog-entry"><form class="catalog-rename" method="post" action="{{ url_for('admin.rename_catalog_entry', kind=kind, entry_id=entry.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label class="sr-only" for="{{ kind }}-{{ entry.id }}">Rename {{ entry.name }}</label><input id="{{ kind }}-{{ entry.id }}" name="name" maxlength="{{ 80 if kind == 'category' else 150 }}" required value="{{ entry.name }}">{% if not entry.is_active %}<small>Inactive</small>{% endif %}<button class="outline-btn">Save</button></form><form method="post" action="{{ url_for('admin.toggle_catalog_entry', kind=kind, entry_id=entry.id) }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="outline-btn">{{ 'Reactivate' if not entry.is_active else 'Deactivate' }}</button></form></div>
+    {% else %}<p>No entries yet.</p>{% endfor %}
+  </div></section>
+  {% endfor %}
+</div>
+<p class="privacy-hint">Inactive entries stay attached to existing reports but are no longer offered for new reports.</p>
+{% endblock %}

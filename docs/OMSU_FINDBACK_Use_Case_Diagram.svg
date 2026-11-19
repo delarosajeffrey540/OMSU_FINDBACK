@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1150" viewBox="0 0 1800 1150">
+<defs>
+  <marker id="triangle" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+    <path d="M1,1 L10,6 L1,11 Z" fill="#F8FAFC" stroke="#475569" stroke-width="1.5"/>
+  </marker>
+  <style>text { font-family: Arial, Helvetica, sans-serif; }</style>
+</defs>
+<rect width="1800" height="1150" fill="#F8FAFC"/>
+<text x="900" y="48" text-anchor="middle" font-size="34" font-weight="800" fill="#0F172A">OMSU FindBack - Use Case Diagram</text>
+<text x="900" y="78" text-anchor="middle" font-size="16" fill="#64748B">End-user access permissions and available system features</text>
+<rect x="250" y="120" width="1300" height="930" rx="18" fill="#FFFFFF" stroke="#334155" stroke-width="3"/>
+<rect x="250" y="120" width="1300" height="54" rx="18" fill="#1E293B"/>
+<text x="900" y="154" text-anchor="middle" font-size="20" font-weight="800" fill="#FFFFFF">OMSU FindBack System</text>
+
+<line x1="158" y1="307" x2="280" y2="307" stroke="#475569" stroke-width="2.2"/>
+<line x1="280" y1="190" x2="280" y2="307" stroke="#64748B" stroke-width="2"/>
+<line x1="280" y1="190" x2="500" y2="190" stroke="#475569" stroke-width="2.2"/>
+<line x1="500" y1="190" x2="500" y2="245" stroke="#475569" stroke-width="2.2"/>
+<line x1="280" y1="190" x2="930" y2="190" stroke="#475569" stroke-width="2.2"/>
+<line x1="930" y1="190" x2="930" y2="245" stroke="#475569" stroke-width="2.2"/>
+<line x1="280" y1="315" x2="280" y2="665" stroke="#64748B" stroke-width="2"/>
+<line x1="158" y1="547" x2="280" y2="547" stroke="#475569" stroke-width="2.2"/>
+<path d="M280 365 V315 H1140" fill="none" stroke="#475569" stroke-width="2.2"/>
+<line x1="360" y1="315" x2="360" y2="365" stroke="#475569" stroke-width="2.2"/>
+<line x1="750" y1="315" x2="750" y2="365" stroke="#475569" stroke-width="2.2"/>
+<line x1="1140" y1="315" x2="1140" y2="365" stroke="#475569" stroke-width="2.2"/>
+<path d="M280 500 V455 H1140" fill="none" stroke="#475569" stroke-width="2.2"/>
+<line x1="360" y1="455" x2="360" y2="500" stroke="#475569" stroke-width="2.2"/>
+<line x1="750" y1="455" x2="750" y2="500" stroke="#475569" stroke-width="2.2"/>
+<line x1="1140" y1="455" x2="1140" y2="500" stroke="#475569" stroke-width="2.2"/>
+<path d="M280 635 V590 H1000" fill="none" stroke="#475569" stroke-width="2.2"/>
+<line x1="550" y1="590" x2="550" y2="635" stroke="#475569" stroke-width="2.2"/>
+<line x1="1000" y1="590" x2="1000" y2="635" stroke="#475569" stroke-width="2.2"/>
+<line x1="1505" y1="700" x2="1505" y2="910" stroke="#64748B" stroke-width="2"/>
+<line x1="1710" y1="812" x2="1505" y2="812" stroke="#475569" stroke-width="2.2"/>
+<path d="M1505 760 V710 H640 M1440 710 V760 M1040 710 V760" fill="none" stroke="#475569" stroke-width="2.2"/>
+<path d="M1505 875 V820 H640 M1440 820 V875 M1040 820 V875" fill="none" stroke="#475569" stroke-width="2.2"/>
+<line x1="1505" y1="935" x2="1505" y2="1020" stroke="#64748B" stroke-width="2"/>
+<line x1="1710" y1="982" x2="1505" y2="982" stroke="#475569" stroke-width="2.2"/>
+<path d="M1505 990 V935 H640 M1440 935 V990 M1040 935 V990" fill="none" stroke="#475569" stroke-width="2.2"/>
+<path d="M1690 1026 L1760 1026 L1760 820 L1712 820" fill="none" stroke="#475569" stroke-width="2.2" marker-end="url(#triangle)"/>
+<ellipse cx="650" cy="245" rx="150" ry="43" fill="#E0F2FE" stroke="#0284C7" stroke-width="2.5"/>
+<text x="650" y="250" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Register account</text>
+<ellipse cx="1080" cy="245" rx="150" ry="43" fill="#E0F2FE" stroke="#0284C7" stroke-width="2.5"/>
+<text x="1080" y="250" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Sign in / sign out</text>
+<ellipse cx="510" cy="365" rx="150" ry="43" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="510" y="370" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Browse campus reports</text>
+<ellipse cx="900" cy="365" rx="150" ry="43" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="900" y="370" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Submit Lost / Found report</text>
+<ellipse cx="1290" cy="365" rx="150" ry="43" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="1290" y="370" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Get AI photo suggestions</text>
+<ellipse cx="510" cy="500" rx="150" ry="43" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="510" y="505" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">View own reports and status</text>
+<ellipse cx="900" cy="500" rx="150" ry="43" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="900" y="505" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Review possible item matches</text>
+<ellipse cx="1290" cy="500" rx="150" ry="43" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="1290" y="505" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Submit claim with ownership details</text>
+<ellipse cx="700" cy="635" rx="150" ry="43" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="700" y="640" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Message report owner / claimant</text>
+<ellipse cx="1150" cy="635" rx="150" ry="43" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.5"/>
+<text x="1150" y="640" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">View and open notifications</text>
+<ellipse cx="490" cy="760" rx="150" ry="43" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5"/>
+<text x="490" y="765" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Review, approve, or reject reports</text>
+<ellipse cx="890" cy="760" rx="150" ry="43" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5"/>
+<text x="890" y="765" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Review claims and ownership proof</text>
+<ellipse cx="1290" cy="760" rx="150" ry="43" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5"/>
+<text x="1290" y="765" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Verify handover / reverse claim</text>
+<ellipse cx="490" cy="875" rx="150" ry="43" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5"/>
+<text x="490" y="880" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Create report for a student</text>
+<ellipse cx="890" cy="875" rx="150" ry="43" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5"/>
+<text x="890" y="880" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Access claim conversations</text>
+<ellipse cx="1290" cy="875" rx="150" ry="43" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.5"/>
+<text x="1290" y="880" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Receive report and claim alerts</text>
+<ellipse cx="490" cy="990" rx="150" ry="43" fill="#F3E8FF" stroke="#9333EA" stroke-width="2.5"/>
+<text x="490" y="995" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Manage users, roles, and status</text>
+<ellipse cx="890" cy="990" rx="150" ry="43" fill="#F3E8FF" stroke="#9333EA" stroke-width="2.5"/>
+<text x="890" y="995" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Manage categories and locations</text>
+<ellipse cx="1290" cy="990" rx="150" ry="43" fill="#F3E8FF" stroke="#9333EA" stroke-width="2.5"/>
+<text x="1290" y="995" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">View analytics, records, and audit</text>
+<circle cx="140" cy="280" r="12" fill="none" stroke="#0F172A" stroke-width="3"/>
+<line x1="140" y1="292" x2="140" y2="329" stroke="#0F172A" stroke-width="3"/>
+<line x1="122" y1="307" x2="158" y2="307" stroke="#0F172A" stroke-width="3"/>
+<line x1="140" y1="329" x2="124" y2="351" stroke="#0F172A" stroke-width="3"/>
+<line x1="140" y1="329" x2="156" y2="351" stroke="#0F172A" stroke-width="3"/>
+<text x="140" y="377" text-anchor="middle" font-size="16" font-weight="700" fill="#0F172A">Guest</text>
+<circle cx="140" cy="520" r="12" fill="none" stroke="#0F172A" stroke-width="3"/>
+<line x1="140" y1="532" x2="140" y2="569" stroke="#0F172A" stroke-width="3"/>
+<line x1="122" y1="547" x2="158" y2="547" stroke="#0F172A" stroke-width="3"/>
+<line x1="140" y1="569" x2="124" y2="591" stroke="#0F172A" stroke-width="3"/>
+<line x1="140" y1="569" x2="156" y2="591" stroke="#0F172A" stroke-width="3"/>
+<text x="140" y="617" text-anchor="middle" font-size="16" font-weight="700" fill="#0F172A">Student</text>
+<circle cx="1690" cy="785" r="12" fill="none" stroke="#0F172A" stroke-width="3"/>
+<line x1="1690" y1="797" x2="1690" y2="834" stroke="#0F172A" stroke-width="3"/>
+<line x1="1672" y1="812" x2="1708" y2="812" stroke="#0F172A" stroke-width="3"/>
+<line x1="1690" y1="834" x2="1674" y2="856" stroke="#0F172A" stroke-width="3"/>
+<line x1="1690" y1="834" x2="1706" y2="856" stroke="#0F172A" stroke-width="3"/>
+<text x="1690" y="882" text-anchor="middle" font-size="16" font-weight="700" fill="#0F172A">Moderator</text>
+<circle cx="1690" cy="955" r="12" fill="none" stroke="#0F172A" stroke-width="3"/>
+<line x1="1690" y1="967" x2="1690" y2="1004" stroke="#0F172A" stroke-width="3"/>
+<line x1="1672" y1="982" x2="1708" y2="982" stroke="#0F172A" stroke-width="3"/>
+<line x1="1690" y1="1004" x2="1674" y2="1026" stroke="#0F172A" stroke-width="3"/>
+<line x1="1690" y1="1004" x2="1706" y2="1026" stroke="#0F172A" stroke-width="3"/>
+<text x="1690" y="1052" text-anchor="middle" font-size="16" font-weight="700" fill="#0F172A">Administrator</text>
+<text x="310" y="300" font-size="13" font-weight="800" fill="#2563EB">STUDENT PERMISSIONS</text>
+<text x="310" y="690" font-size="13" font-weight="800" fill="#16A34A">MODERATOR PERMISSIONS (ADMIN ALSO HAS THESE)</text>
+<text x="310" y="925" font-size="13" font-weight="800" fill="#9333EA">ADMINISTRATOR-ONLY PERMISSIONS</text>
+<rect x="285" y="1070" width="1230" height="27" rx="8" fill="#FFF7ED" stroke="#EA580C" stroke-width="1.5"/>
+<text x="900" y="1088" text-anchor="middle" font-size="12" font-weight="700" fill="#9A3412">Protected features require an account. AI matches are suggestions only; authorized staff verify ownership and handover.</text>
+<text x="1650" y="905" text-anchor="end" font-size="11" fill="#475569">Admin inherits staff access</text>
+</svg>

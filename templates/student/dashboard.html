@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}Campus board | OMSU FindBack{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/student/dashboard.css') }}">{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">STUDENT WORKSPACE</span><h1>Your campus. Your lost & found.</h1><p>Find what is missing. Return what matters.</p></div><span class="community-pill">OMSU COMMUNITY</span></div>
+<div class="welcome-banner"><div><span class="eyebrow">LOST OR FOUND SOMETHING?</span><h2>Something lost? Something found?</h2><p>Start a report. Let smart matching help you reconnect.</p></div><div class="button-row"><a class="primary-btn" href="{{ url_for('student.create_report', kind='lost') }}">＋ Report lost item</a><a class="outline-btn" href="{{ url_for('student.create_report', kind='found') }}">＋ Report found item</a></div></div>
+<div class="section-title"><div><h2>Recently reported</h2><p>{{ reports|length }} latest campus reports</p></div><a href="{{ url_for('student.my_reports') }}">View my reports →</a></div>
+<div class="item-grid">{% for item in reports %}<article class="item-card">
+<div class="item-photo">{% if item.photo_filename %}<img src="{{ url_for('report_image', report_id=item.id) }}">{% else %}<span>◎</span>{% endif %}<span class="status-tag">{{ item.report_type }}</span></div>
+<div class="item-info"><span class="muted">{{ item.status }}</span><h3>{{ item.item_name }}</h3><p>{{ item.campus_location }}</p><small>{{ item.event_date.strftime('%d %B %Y') }} · {{ item.category }}</small><a href="{{ url_for('student.item_detail', report_id=item.id) }}">View item →</a></div></article>
+{% else %}<div class="empty-state">No reports have been published yet. Be the first to help your campus community.</div>{% endfor %}</div>
+<div class="safety-note">Stay safe: keep identifying details private. Ownership is verified before an item is released.</div>
+{% endblock %}
